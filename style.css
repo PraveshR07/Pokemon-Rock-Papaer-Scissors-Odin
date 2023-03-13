@@ -9,17 +9,16 @@
     box-sizing: border-box;
 }
 
-body {
-    background: color #5663a1; 
-}
-
+ body {
+    background-color: #a2c6ee;
+ }
 header {
-    background-color: #2d2d2d;
+    background: #fdfdc7;; 
     padding: 20px;
 }
 
 h1 {
-    color:#ffffff; 
+    color:#0e0d0d; 
     text-align: center;
     font-family:arial, sans-serif; 
 }
@@ -87,4 +86,12 @@ h1 {
     padding: 10px;
     margin: 0 15px; 
     border-radius: 10px;
+    /* Add Transtion for however affect within the div tag */
+    transition: all .5s ease;
 }
+
+.choice:hover {
+    cursor: pointer;
+    background-color: #e8A65f;
+} 
+
