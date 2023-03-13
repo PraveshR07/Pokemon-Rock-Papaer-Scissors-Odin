@@ -95,3 +95,10 @@ h1 {
     background-color: #e8A65f;
 } 
 
+#action-message {
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+}
