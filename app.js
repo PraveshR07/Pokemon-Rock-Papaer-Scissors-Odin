@@ -11,17 +11,23 @@ const rock_div = document.getElementById("g");
 const paper_div = document.getElementById("f");
 const scicsoors_div = document.getElementById("w");
 
+// Create main function
+
+function game(userChoice) {   
+
+}
+
 // Create 
 
 rock_div.addEventListener('click', function() {
-    console.log("hey you clicked on rock"); 
+game('g'); 
 })
 
 paper_div.addEventListener('click', function() {
-    console.log('Hey you clicked on paper'); 
+    game('f'); 
 })
 
 scicsoors_div.addEventListener('click', function() {
-    console.log("Hey you clicked on scicsoors"); 
+    game('w')
 })
 
