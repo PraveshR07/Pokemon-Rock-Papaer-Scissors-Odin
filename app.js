@@ -55,7 +55,7 @@ function lose (userChoice, computerChoice) {
     computerScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    result_p.innerHTML = `${convertToWord(userChoice)} loses to ${convertToWord(computerChoice)}. You lost!`;
+    result_p.innerHTML = `${convertToWord(userChoice)} loses to ${convertToWord(computerChoice)}. You lose!`;
     userChoice_div.classList.add('red-glow'); 
     setTimeout(() => userChoice_div.classList.remove('red-glow') , 300);
 
