@@ -16,15 +16,15 @@ const scicsoors_div = document.getElementById("w");
 //Create a function
 
 
-function getComputerChoice (){
+function getComputerChoice () {
     //Create variables for choices
-    const choices = ['g', 'f', 'w']; 
+    const choices = ['g','f','w']; 
     //Use floor to create whole number math.random.
     // Times random to get a number between [0-2.9999] > 3 
     const randomNumber = Math.floor(Math.random() * 3 );
     return choices[randomNumber];
 
-}
+    }
 //Create conver to words fucntion
     function convertToWord(letter) {
         if (letter === "g") return "Grass"; 
@@ -36,21 +36,32 @@ function getComputerChoice (){
 //Create a fucntion for the test for a win
 
 function win (userChoice, computerChoice) {
+    const userChoice_div = document.getElementById(userChoice);
     userScore++;
     userScore_span.innerHTML = userScore;
-    computerScore_span.innerHTML = computerScore; 
-    result_p.innerHTML = `${convertToWord(userChoice)}(user) beats ${convertToWord(computerChoice)}(comp). You Win`; 
+    computerScore_span.innerHTML = computerScore;
+    result_p.innerHTML = `${convertToWord(userChoice)} beats ${convertToWord(computerChoice)}. You win!`;
+    
 }
 
 // Create fucntion for lose
-function lost (userChoice, computerChoice) {
-    
+function lose (userChoice, computerChoice) {
+    const userChoice_div = document.getElementById(userChoice);
+    computerScore++;
+    userScore_span.innerHTML = userScore;
+    computerScore_span.innerHTML = computerScore;
+    result_p.innerHTML = `${convertToWord(userChoice)} loses to ${convertToWord(computerChoice)}. You lost!`;
 
 }
-
+//Create a function for draw 
 function draw (userChoice,computerChoice) {
-    console.log("DRAW")
+    const userChoice_div = document.getElementById(userChoice);
+    userScore_span.innerHTML = userScore;
+    computerScore_span.innerHTML = computerScore;
+    result_p.innerHTML = `${convertToWord(userChoice)} equals ${convertToWord(computerChoice)}. It's a draw`;
 } 
+
+
 function game(userChoice) {   
     const computerChoice = getComputerChoice();
     switch(userChoice + computerChoice) {
@@ -70,7 +81,7 @@ function game(userChoice) {
         case 'ww':
         case 'ff':
         case 'gg': 
-        tie(userChoice, compu); 
+        draw(userChoice, computerChoice); 
         break; 
 
     }
@@ -78,13 +89,13 @@ function game(userChoice) {
     }
 
 rock_div.addEventListener('click', function() {
-game('g'); 
+game("g"); 
 })
 
 paper_div.addEventListener('click', function() {
-    game('f'); 
+    game("f"); 
 })
 
 scicsoors_div.addEventListener('click', function() {
-    game('w')
+    game("w")
 })
